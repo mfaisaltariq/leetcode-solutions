@@ -6,8 +6,21 @@
 // For example, 121 is a palindrome while 123 is not.
 '''
 
+def isPalindromeWithoutString(x: int) -> bool:
+    if x < 0 or (x %10 ==0 and x !=0):
+        return False
+    if x == 0 or x < 10:
+        return True
+    reverted_num = 0
+    while(reverted_num < x):
+        reverted_num = (reverted_num * 10) + (x % 10)
+        x = int(x / 10)
+
+    return x == reverted_num or x == int(reverted_num / 10)
+
+
 def isPalindrome(x: int) -> bool:
-    if x < 0:
+    if x < 0 or (x %10 ==0 and x !=0):
         return False
     if x == 0 or x < 10:
         return True
@@ -18,4 +31,4 @@ def isPalindrome(x: int) -> bool:
             return False
     return True
 
-print(isPalindrome(-121))
+print(isPalindromeWithoutString(45954))
