@@ -31,15 +31,14 @@ from typing import List
 
 def longestCommonPrefix(strs: List[str]) -> str:
     sorted_list = sorted(strs)
-    iteration_range = min(len(sorted_list[0]), len(sorted_list[-1]))
     longest_prefix = ""
-    for i in range(iteration_range):
-        if sorted_list[0][i] == sorted_list[-1][i]:
-            longest_prefix += sorted_list[0][i]
+    for i, j in zip(sorted_list[0], sorted_list[-1]):
+        if i is j:
+            longest_prefix += i
         else:
             return longest_prefix
 
     return longest_prefix
 
-print(longestCommonPrefix(["flower","flow","flight"]))
+print(longestCommonPrefix(["flow","flow","flowht"]))
 print(longestCommonPrefix(["dog","racecar","car"]))
