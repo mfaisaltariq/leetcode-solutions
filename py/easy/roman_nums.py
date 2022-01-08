@@ -36,7 +36,7 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 
 def romToInt(roman: str ) -> int:
   # check if contains invalid characters return 0 or throw exception
-  dict = {
+  value = {
     "I": 1,
     "V": 5,
     "X": 10,
@@ -44,17 +44,35 @@ def romToInt(roman: str ) -> int:
     "C": 100,
     "D": 500,
     "M": 1000,
+    "IV": 4,
+    "IX": 9,
+    "XL": 40,
+    "XC": 90,
+    "CD": 400,
+    "CM": 900
   }
-  converted = 0
-  if len(roman) == 1: 
-    return dict[roman[0]]
-  roman = roman.replace("IV", "IIII").replace("IX", "VIIII")
-  roman = roman.replace("XL", "XXXX").replace("XC", "LXXXX")
-  roman = roman.replace("CD", "CCCC").replace("CM", "DCCCC")
-  print(roman)
-  for i in range(len(roman)):
-    converted += dict[roman[i]]
-    print(converted)
-  return converted
+
+  # Initialize previous character and answer
+  p = 0
+  ans = 0
+
+  # Traverse through all characters
+  n = len(roman)
+  for i in range(n-1, -1, -1):
+
+    # If greater than or equal to previous,
+    # add to answer
+    if value[roman[i]] >= p:
+        ans += value[roman[i]]
+
+    # If smaller than previous
+    else:
+        ans -= value[roman[i]]
+
+    # Update previous
+    p = value[roman[i]]
+    print(ans, p)
+
+  return ans
 
 print(romToInt("MCMXCIV"))

@@ -50,14 +50,16 @@ const romToInt = (roman) => {
   let converted = 0;
   let romanLength = roman.length;
   if (romanLength === 1) return dict[roman[0]];
-  roman = roman.replace("IV", "IIII").replace("IX", "VIIII");
-  roman = roman.replace("XL", "XXXX").replace("XC", "LXXXX");
-  roman = roman.replace("CD", "CCCC").replace("CM", "DCCCC");
-  console.log(roman);
-  [...roman].forEach((char) => {
-    converted += dict[char];
-  });
+  let previous = 0;
+  for (let i = romanLength; i--; i >= 0) {
+    if (dict[roman[i]] >= previous) {
+      converted += dict[roman[i]];
+    } else {
+      converted -= dict[roman[i]];
+    }
+    previous = dict[roman[i]];
+  }
   return converted;
 };
 
-console.log(romToInt("III"));
+console.log(romToInt("MCMXCIV"));
