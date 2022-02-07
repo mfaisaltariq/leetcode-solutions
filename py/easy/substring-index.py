@@ -9,41 +9,34 @@ def strStr(haystack: str, needle: str) -> int:
     else:
         return -1
 
-    #### below solution doesn't work for last test case so had to use internal functions
-    # substring_len = len(needle)
-    # if substring_len == 0:
-    #     return 0
-    # if len(haystack) == 0:
-    #     return -1
-    # # if substring_len == 1:
-    # #     return haystack.index(needle)
-    # pointer = 0
-    # index = 0
-    # substring_len = len(needle)
-    # for char in haystack:
-    #     print(pointer, substring_len, index, 'here1')
-    #     if char is needle[pointer]:
-    #         print(pointer, substring_len, index, 'here3')
-    #         pointer +=1
+# from typing import List
+# def strStr(haystack: str, needle: str) -> int:
+    # ref_arr = [0] * len(needle)
+    # i, j = 1, 0
+    # while i < len(needle):
+    #     print(ref_arr,i, j)
+    #     print(needle[i], needle[j])
+    #     if needle[i] == needle[j]:
+    #         j += 1
+    #         ref_arr[i] = j
+    #         i += 1
+    #     elif j > 0:
+    #         j = ref_arr[j-1]
     #     else:
-    #         pointer = 0
-        
-    #     index +=1
-    #     if pointer == substring_len:
-    #         print(pointer, substring_len, index, 'here')
-    #         break
-    #         # return index - pointer
+    #         print('here')
+    #         ref_arr[i] = 0
+    #         i += 1
 
-    # print(pointer, substring_len, index, 'here4')
-    # if pointer < substring_len:
-    #     return -1
-    # else:
-    #     return index - pointer
+    # print(ref_arr)
+    # return 0
 
-print(strStr('a', 'a'))
-print(strStr('a', ''))
-print(strStr('', ''))
-print(strStr('', 'a'))
-print(strStr('hello', 'll'))
-print(strStr('bbb', 'bbb'))
+# print(strStr('a', 'a'))
+# print(strStr('a', ''))
+# print(strStr('', ''))
+# print(strStr('', 'a'))
+# print(strStr('hello', 'll'))
+# print(strStr('bbb', 'bbb'))
 print(strStr("mississippi","issip"))
+print(strStr("abcxabcdabcdabcy","aabaabaaa"))
+# a a b a a b a a a
+# 0 1 2 3 4 5 6 7 8
