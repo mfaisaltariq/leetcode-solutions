@@ -29,7 +29,7 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 
 from typing import List
 
-# test case [3,3] with target 6 is an edge case keep it in the mind
+### VVI test case [3,3] with target 6 is an edge case keep it in the mind
 
 
 def twoSum(nums: List[int], target: int) -> List[int]:
