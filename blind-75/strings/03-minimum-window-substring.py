@@ -11,7 +11,7 @@ def minWindow(s: str, t: str) -> str:
         countT[char] = 0 
     
     have, need = 0, len(countT)
-    res, resLen = "", len(s)
+    res, resLen = "", len(s) + 1
     l = 0
     for r,val in enumerate(s):
     
@@ -30,6 +30,6 @@ def minWindow(s: str, t: str) -> str:
                 if countT[s[l]] == 0:
                     have -= 1
             l += 1
-    return res if resLen != len(s) else ""
+    return res if resLen != len(s) + 1 else ""
 
 print(minWindow('ADOBECODEBANC', 'ABC'))        
