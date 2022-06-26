@@ -13,7 +13,7 @@ def decode(str: str) -> List:
 
         while str[j] != '#':
             j+=1
-        length = int(str[i:j])
+        length = int(str[i:j+1])
         res.append(str[j+1: j+1+length])
         i = j + 1 + length
 
