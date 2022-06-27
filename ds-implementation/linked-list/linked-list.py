@@ -31,7 +31,7 @@ class LinkedList(object):
                 return
             current_node = current_node.next
 
-    def reverse(self, data):
+    def reverse(self):
         if self.head is None:
             raise Exception("Error: Linked List is empty")
         if self.head.next is None:
@@ -39,10 +39,11 @@ class LinkedList(object):
 
         current_node = self.head
         previous = None
-        while current_node is not None:
+        while current_node:
+            nxt = current_node.next
             current_node.next = previous
-            next = current_node.next
-            current_node = next
+            previous = current_node
+            current_node = nxt
         self.head = previous
 
     def __str__(self):
@@ -64,5 +65,6 @@ LL.insert(6)
 LL.insert('abc')
 print(LL)
 LL.remove(5)
+LL.reverse()
 print(LL)
         
