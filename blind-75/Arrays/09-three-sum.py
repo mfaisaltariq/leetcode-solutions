@@ -1,3 +1,7 @@
+'''
+https://www.youtube.com/watch?v=jzZsG8n2R9A&list=PLot-Xpze53ldVwtstag2TL4HQhAnC8ATf&index=9
+https://leetcode.com/problems/3sum/
+'''
 from typing import List
 def threeSum(nums: List[int]) -> List[List[int]]:
     res = []

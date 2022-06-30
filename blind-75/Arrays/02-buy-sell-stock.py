@@ -1,3 +1,7 @@
+'''
+https://www.youtube.com/watch?v=1pkOgXD63yU&list=PLot-Xpze53ldVwtstag2TL4HQhAnC8ATf&index=2
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+'''
 from typing import List
 def maxProfit( prices: List[int]) -> int:
     max_profit = 0

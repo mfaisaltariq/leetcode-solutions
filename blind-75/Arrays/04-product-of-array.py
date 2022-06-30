@@ -1,3 +1,7 @@
+'''
+https://www.youtube.com/watch?v=bNvIQI2wAjk&list=PLot-Xpze53ldVwtstag2TL4HQhAnC8ATf&index=4
+https://leetcode.com/problems/product-of-array-except-self/
+'''
 from typing import List
 def productExceptSelf(nums: List[int]) -> List[int]:
     result = [1] * len(nums)
