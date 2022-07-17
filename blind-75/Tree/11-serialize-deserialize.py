@@ -8,12 +8,14 @@ class TreeNode:
         self.left = left
         self.right = right
 
-def serialize( root) -> str:
+def serialize(root) -> str:
     """Encodes a tree to a single string.
     
     :type root: TreeNode
     :rtype: str
     """
+    if not root:
+        return ''
     serialized = dfs(root, [])
     return ','.join(str(val) for val in serialized)
 
@@ -35,6 +37,8 @@ def deserialize(data):
     :type data: str
     :rtype: TreeNode
     """
+    if not data:
+        return None
     nodes = iter(data.split(','))
     return buildTree(nodes)
 
