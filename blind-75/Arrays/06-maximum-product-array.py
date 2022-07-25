@@ -18,12 +18,13 @@ Explanation: [2,3] has the largest product 6.
 '''
 from typing import List
 def maxProduct(nums: List[int]) -> int:
-    max_product = max(nums)
+    max_product = nums[0]
     curr_min, curr_max = 1,1
 
     for n in nums:
         if n == 0:
             curr_min, curr_max = 1,1
+            res = max(res, n)
             continue
 
         tmp = curr_max * n
